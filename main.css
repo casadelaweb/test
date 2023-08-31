@@ -1,0 +1,18 @@
+.timer {
+}
+
+.timer-message {
+  font-size: 16px;
+  margin-bottom: 1em;
+}
+
+.timer-button {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.25s;
+}
+
+.timer-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
