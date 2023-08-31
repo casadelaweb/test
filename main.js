@@ -88,6 +88,32 @@ document.addEventListener('DOMContentLoaded', () => {
     duration: 10,
   })
   buttonTimer.init()
+
+  const loaderThird = document.body.querySelector('.loader-third')
+  const elements = [
+    ...loaderThird.querySelectorAll('path'),
+    ...loaderThird.querySelectorAll('circle')
+  ]
+  elements.forEach((element) => element.style.transformOrigin = 'center')
+
+  function update(duration) {
+    elements.forEach((element, index) => {
+      element.animate({
+          // opacity: [Math.random(), 1],
+          transform: [
+            'scale(0.75) rotate(0deg)',
+            `scale(1) rotate(${ 180 * index }deg)`,
+            'scale(0.75) rotate(0deg)',
+          ],
+        },
+        duration,
+      )
+    })
+
+    setTimeout(() => requestAnimationFrame(update), duration)
+  }
+
+  update(1000)
 })
 
 
