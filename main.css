@@ -12,7 +12,7 @@
   transition: opacity 0.25s;
 }
 
-.timer-button.hidden {
+.timer-button.disabled {
   opacity: 0;
   pointer-events: none;
 }
